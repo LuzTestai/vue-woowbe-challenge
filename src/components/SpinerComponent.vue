@@ -1,7 +1,9 @@
 <template>
+  <div class="container-spinner">
     <div class="spinner">
       <div class="spinner-circle"></div>
     </div>
+  </div>
   </template>
   
   <script>
@@ -11,6 +13,13 @@
   </script>
   
   <style>
+  .container-spinner {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .spinner {
     display: flex;
     justify-content: center;
@@ -22,8 +31,8 @@
   .spinner-circle {
     width: 40px;
     height: 40px;
-    border: 4px solid #ccc;
-    border-top-color: #000;
+    border: 4px solid #ffffff;
+    border-top-color: #d202fc;
     border-radius: 50%;
     animation: spin 1s infinite linear;
   }

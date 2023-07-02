@@ -16,7 +16,6 @@ const toggleMenu = () => {
 };
 
 const logout = () => {
-      // Realiza la acción para cerrar sesión y borrar el token del store
       store.commit('clearToken');
       router.push('/login');
     };
