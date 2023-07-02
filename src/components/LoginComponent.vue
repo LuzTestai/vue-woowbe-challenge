@@ -3,13 +3,6 @@ import { useStore } from 'vuex';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-});
-
 // const email = 'prueba@woowbe.com';
 // const password = 'pruebatecnica2023!';
 const email = ref('');
@@ -22,13 +15,15 @@ const store = useStore();
 const login = () => {
   store
     .dispatch('fetchToken', { email: email.value, password: password.value })
-    .then(() => {
-      router.push('/home');
+    .then((token) => {
+      store.commit('setToken', token);
+      router.push('/');
     })
     .catch(error => {
       console.error(error);
     });
 };
+
 
 </script>
 

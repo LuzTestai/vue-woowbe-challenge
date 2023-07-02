@@ -1,14 +1,13 @@
 <template>
-    <div class="card">
+    <router-link :to="{ name: 'comercio', params: { id: comercio.id }}"  class="card">
         <img :src="comercio.business.widescreen_picture" :alt="comercio.name" class="card-image" />
       <h1 class="card-name">{{ comercio.name }}</h1>
       <p class="card-description">{{comercio.reward}}</p>
-    </div>
+    </router-link>
 
   </template>
   
   <script>
-  import { onMounted } from 'vue';
 
   export default {
     props: {
@@ -17,26 +16,32 @@
         required: true
       }
     },
-    setup(props) {
-    onMounted(() => {
-      console.log('Comercio:', props.comercio);
-    });
-  }
   };
   </script>
   
   <style>
 
 .card {
-  width: calc(20% - 20px); /* Tamaño de cada tarjeta (25% de ancho menos el espacio entre ellas) */
+  width: calc(20% - 20px);
   margin-bottom: 20px;
-  background-color: #d08ff7a3;
-  padding: 20px;
+  background: linear-gradient(135deg, #ea52f8,  #1400ff69);
+  padding: 20px 25px;
   box-sizing: border-box;
   margin: 25px;
   height: 260px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0px 10px 30px #ea52f854;
+  border-radius: 15px;
 
+}
+
+.card:hover {
+  background-color: #8104c9a3;
+}
+.card:hover h1, .card:hover p {
+  color: azure;
 }
 
 @media (max-width: 992px) {
@@ -69,7 +74,9 @@
   
   .card-description {
     font-size: 14px;
-    color: gray;
+    color: #4c0099;
   }
   </style>
+  
+
   
