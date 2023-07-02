@@ -118,11 +118,13 @@ export default {
 }
 .container-detail-comercios {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   max-width: 80%;
   padding: 85px;
   box-shadow: 0px 10px 30px #cf52f854;
   border-radius: 15px;
+  align-items: center;
 }
 
 .title-comercio {
@@ -139,8 +141,8 @@ export default {
 }
 .content-reward span{
   font-weight: 600;
-    font-size: 50px;
-    color: #5e00aa;
+  font-size: 50px;
+  color: #5e00aa;
 }
 
 .days-weekend span{
@@ -156,12 +158,10 @@ export default {
   padding: 50px;
   border: 1px solid rgb(200, 0, 255);
   font-size: large;
-  margin-top: 30px;
+  margin-top: 100px;
   transition: transform 0.3s ease;
   background: linear-gradient(135deg, #ea52f8,  #1400ff69);
   color: white;
-
-
 }
 .description-comercio:hover {
   transform: scale(1.1);

@@ -22,7 +22,7 @@
   <style>
 
 .card {
-  width: calc(20% - 20px);
+  width: calc(25% - 10px);
   margin-bottom: 20px;
   background: linear-gradient(135deg, #ea52f8,  #1400ff69);
   padding: 20px 25px;

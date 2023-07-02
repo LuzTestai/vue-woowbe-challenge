@@ -82,11 +82,12 @@ h1 {
   width: 150px;
   height: 40px;
   background-color: var(--color-background-violett);
-  color: var(--color-text);
   border: none;
   cursor: pointer;
   margin: 30px 0px;
   font-weight: 600;
+  color: white;
+  border-radius: 19px;
 }
 </style>
 
