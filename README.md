@@ -34,7 +34,11 @@ Sigue estos pasos para levantar el proyecto en tu entorno local:
    ```bash
    npm install
    ```
+4. Levanta el proyecto con :
 
+   ```bash
+   npm run dev
+   ```
 7. Abre tu navegador y accede a la URL (http://localhost:5173/) para ver la página de fidelización.
 
 ## Estructura del proyecto
