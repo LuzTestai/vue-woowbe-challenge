@@ -20,21 +20,27 @@ const router = createRouter({
         requiresAuth: true
       },
       beforeEnter: (to, from, next) => {
-        console.log('entre al before', store.state.isAuthenticated);
         if (store.state.isAuthenticated) {
-          console.log('aqui estoy en route', store.state.isAuthenticated);
           next(); 
-          console.log('aqui estoy en route', store.state.token)
-          next(); // Continuar navegando hacia la ruta /home
         } else {
-          next({ name: 'login' }); // Redirigir a la página de inicio de sesión
+          next({ name: 'login' });
         }
       }
     },
     {
       path: '/comercio/:id',
       name: 'comercio',
-      component: DetailView
+      component: DetailView,
+      meta: {
+        requiresAuth: true
+      },
+      beforeEnter: (to, from, next) => {
+        if (store.state.isAuthenticated) {
+          next(); 
+        } else {
+          next({ name: 'login' });
+        }
+      }
     }
     
   ]

@@ -3,12 +3,8 @@ import { useStore } from 'vuex';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-// const email = 'prueba@woowbe.com';
-// const password = 'pruebatecnica2023!';
 const email = ref('');
 const password = ref('');
-
-
 const router = useRouter();
 const store = useStore();
 

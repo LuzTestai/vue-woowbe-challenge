@@ -32,10 +32,9 @@
    </div>
   
   </div>
-  <div v-else>
-    <Spinner />
-  </div>
-
+    <div v-else>
+      <Spinner />
+    </div>
   </template>
 
 <script>
@@ -106,8 +105,6 @@ export default {
     convertWeekdays
     }
   },
-
-
 };
 </script>
 
@@ -123,10 +120,8 @@ export default {
   display: flex;
   flex-direction: column;
   max-width: 80%;
-  background-color: rgba(155, 65, 239, 0.075);
   padding: 85px;
-  background: linear-gradient(135deg, #ea52f854, #1400ff1c);
-  box-shadow: 0px 10px 30px #ea52f854;
+  box-shadow: 0px 10px 30px #cf52f854;
   border-radius: 15px;
 }
 

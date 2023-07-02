@@ -46,19 +46,19 @@
 
 @media (max-width: 992px) {
   .card {
-    width: calc(33.33% - 10px); /* Cambia el tamaño de las tarjetas en pantallas más pequeñas */
+    width: calc(33.33% - 10px);
   }
 }
 
 @media (max-width: 768px) {
   .card {
-    width: calc(50% - 10px); /* Cambia el tamaño de las tarjetas en pantallas aún más pequeñas */
+    width: calc(50% - 10px);
   }
 }
 
 @media (max-width: 576px) {
   .card {
-    width: 100%; /* En pantallas muy pequeñas, las tarjetas ocupan todo el ancho */
+    width: 100%;
   }
 }
   .card-image {
