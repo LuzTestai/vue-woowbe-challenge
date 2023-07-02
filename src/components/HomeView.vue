@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="image-container">
-      <img src="https://t3.ftcdn.net/jpg/04/90/55/04/240_F_490550404_0P8SLIcoRwqwXUYqJbUq1f52vOrFkLZS.jpg" alt="Imagen">
+      <img src="https://img.freepik.com/fotos-premium/foto-estudio-manos-temblando-aisladas-sobre-fondo-violeta-azul-degradado-neon_155003-45860.jpg" alt="Imagen">
       <div class="overlay-text">
         <h1>En Woowbe,</h1>
          valoramos y apreciamos a nuestros clientes leales. Por eso, hemos creado un programa de fidelización diseñado exclusivamente para premiar tu confianza y apoyo continuo.
@@ -10,32 +10,40 @@
     </div>
    <div class="second-part">
     <h1>Nuestros Comercios</h1>
-    <div class="container-cards">
-     
+    <div v-if="comercios" class="container-cards">
        <Card v-for="comercioItem in comercios" :key="comercioItem.id" :comercio="comercioItem" /> 
-
     </div>
+    <div v-else>
+        <SpinnerComponent />
+      </div>
   </div> 
   </div>
 </template>
 
 <script>
 import Card from './CardComercios.vue';
+import SpinnerComponent from './SpinerComponent.vue';
 import { useStore } from 'vuex';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, watch } from 'vue';
 
 export default {
-  name: 'MiComponente',
+  name: 'HomeView',
   components: {
     Card,
+    SpinnerComponent,
   },
   setup() {
     const store = useStore();
 
     onMounted(() => {
-      store.dispatch('fetchComercios');
+      watch(
+        () => store.state.token,
+        (newValue, oldValue) => {
+         (newValue || oldValue) &&  store.dispatch('fetchComercios')
+        }
+      )    
     });
-
+   
     const comercios = computed(() => 
       store.state.comercios
     )
@@ -62,7 +70,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+  margin: 0 auto; 
 }
 .second-part { 
   display: flex;
@@ -79,7 +87,6 @@ export default {
 }
 
 .image-container {
-  position: relative;
   width: 100%;
 }
 
@@ -87,7 +94,6 @@ export default {
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0.9;
 }
 
 .image-container .overlay-text {
