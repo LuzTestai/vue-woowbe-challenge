@@ -122,11 +122,13 @@ export default {
   flex-direction: column;
   max-width: 80%;
   padding: 85px;
-  box-shadow: 0px 10px 30px #cf52f854;
+  box-shadow: 0px 10px 30px #7e52f8d9;
   border-radius: 15px;
   align-items: center;
 }
-
+.container-detail-comercios img {
+  max-width: 100%;
+}
 .title-comercio {
   padding: 40px 0px;
     font-weight: 600;

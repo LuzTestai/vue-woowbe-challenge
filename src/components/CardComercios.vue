@@ -28,21 +28,22 @@
   padding: 20px 25px;
   box-sizing: border-box;
   margin: 25px;
-  height: 260px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0px 10px 30px #ea52f854;
   border-radius: 15px;
+  min-height: 300px;
 
 }
 
 .card:hover {
-  background-color: #8104c9a3;
+  background-color: #b133fba3;
+  box-shadow: 0px 10px 50px #bb31eec7;
 }
-.card:hover h1, .card:hover p {
+/* .card:hover h1, .card:hover p {
   color: azure;
-}
+} */
 
 @media (max-width: 992px) {
   .card {
